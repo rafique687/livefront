@@ -1,7 +1,9 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Product from "./ecommerce/component/Product";
-import Home from "./ecommerce/Home";
+//import Home from "./ecommerce/Home";
+//import Home1 from "./ecommerce/Home1"; 
+import Home3 from "./ecommerce/Home3"; 
 
 import Singleproduct from "./ecommerce/pages/Singleproduct";
 import About from "./ecommerce/pages/About";
@@ -67,53 +69,6 @@ import AddCollectionForm from "./ecommerce/backend/category/AddCollectionForm";
 import { FaUpDownLeftRight } from "react-icons/fa6";
 import UpdateCollectionForm from "./ecommerce/backend/category/UpdateCollectionForm";
 
-const dummyOrder = {
-  date: '2025-08-11',
-  customer: {
-    name: 'John Doe',
-    email: 'john@example.com',
-    phone: '+91 9876543210'
-  },
-  shippingAddress: '123 Main Street, Delhi, India',
-  items: [
-    { orderid: 123, name: 'Product A', qty: 2, price: 499.99, status: 'Delivered', cutomername: 'John Doe', email: 'john@example.com', phone: '+91 9876543210', shippingAddress: '123 Main Street, Delhi, India', },
-    { orderid: 124, name: 'Product A', qty: 2, price: 499.99, status: 'Delivered', cutomername: 'John Doe', email: 'john@example.com', phone: '+91 9876543210', shippingAddress: '123 Main Street, Delhi, India', },
-  ],
-  total: 2299.48
-};
-
-// shipment dummy data
-const shipmentsdata = {
-  date: '2025-08-11',
-  items: [
-    {
-      shipmentId: 'SHP001',
-      orderId: 'ORD1001',
-      customerName: 'John Doe',
-      status: 'Shipped',
-      carrier: 'FedEx',
-      trackingNumber: 'FX123456789IN',
-      shippedDate: '2025-08-10',
-      estimatedDelivery: '2025-08-14',
-      address: '123 Main St, New Delhi, India',
-      quantity: 2,
-      inventory: "default", // ✅ fixed
-    },
-    {
-      shipmentId: 'SHP002',
-      orderId: 'ORD1002',
-      customerName: 'Priya Sharma',
-      status: 'Out for Delivery',
-      carrier: 'Delhivery',
-      trackingNumber: 'DL456789123IN',
-      shippedDate: '2025-08-09',
-      estimatedDelivery: '2025-08-11',
-      address: '456 Park Lane, Mumbai, India',
-      quantity: 2,
-      inventory: "default", // ✅ fixed
-    },
-  ],
-};
 
 const router = createBrowserRouter([
   {
@@ -227,7 +182,7 @@ const router = createBrowserRouter([
       },
       {
         path: "sales/Orders",
-        element: <OrderDetails order={dummyOrder} />,
+        element: <OrderDetails />,
       },
       {
         path: "sales/AOVList",
@@ -289,11 +244,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/",
-    element: <Home />,
-    children: [
+     element: <Home3 />,
+       children: [
       {
         index: true,
-        element: <Product />,
+        element: <Product/>,
       },
       {
         path: "/singleproduct/:id",
@@ -315,7 +270,7 @@ const router = createBrowserRouter([
   },
 ]);
 
-function App() {
+function App() { 
   return (
     <AuthProvider>
       <RouterProvider router={router} />

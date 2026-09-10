@@ -44,8 +44,7 @@ export function AuthProvider({ children }) {
 
   return (
     <AuthContext.Provider
-      value={{ cktoken, ckemail, ckadmin, isAuthenticated, loginuser, logout }}
-    >
+      value={{ cktoken, ckemail, ckadmin, isAuthenticated, loginuser, logout }}>
       {children}
     </AuthContext.Provider>
   );

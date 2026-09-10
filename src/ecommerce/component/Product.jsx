@@ -5,11 +5,11 @@ function Product() {
   const [products, setproduct] = useState([]);
 
   useEffect(() => {
-    fetchData();
+    fetchData(); 
   }, []);
 
  // console.log();
-  
+
 
 
   async function fetchData() {
